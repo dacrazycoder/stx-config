@@ -11,7 +11,7 @@ ribbon:
 
 ---
 spring:
-  profiles: ATL-EAST
+  profiles: STXOL-ATL-01
 eureka:
   client:
     serviceUrl:
@@ -20,6 +20,6 @@ eureka:
     preferSameZoneEureka: true
   instance:
     metadataMap:
-      zone: zone1
+      zone: ATL-EAST
 server:  
   port: ${PORT:8765}
