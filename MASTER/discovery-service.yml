@@ -1,5 +1,10 @@
+# Additional Properties Passed to Actuator      
+info:
+  app: 
+    name: Sitatex Online - Discovery Service
+    description: This is a discovery service for Sitatex Online 
 
-
+# Actuator Management Properties
 management:
   endpoint:
     shutdown:
@@ -14,6 +19,8 @@ server:
   port: 8761
 eureka:
     instance:
+        environment: Development
+        datacenter: ATLANTA
         data-center-info: SITA-ATL-EAST
         hostname: localhost
         leaseRenewalIntervalInSeconds: 1
@@ -21,7 +28,7 @@ eureka:
         metadataMap:
           zone: ATL-EAST
     client:
-        registerWithEureka: false
+        registerWithEureka: true
         fetchRegistry: false
         serviceUrl:
             defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
