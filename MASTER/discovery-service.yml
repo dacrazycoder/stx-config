@@ -1,5 +1,4 @@
-server:
-    port: 8761
+
 
 management:
   endpoint:
@@ -12,14 +11,15 @@ management:
           enabled: true   
  
    
-# Defines the Eureka server that is used by the Netflix OSS components to use as the registry
-# for server discovery
+# Discovery Config For Atlanta Nodes
+spring:
+  profiles: STXOL-ATL-01
 eureka:
     instance:
         hostname: localhost
         leaseRenewalIntervalInSeconds: 5
         metadataMap:
-          zone: zone1
+          zone: ATL-EAST
     client:
         registerWithEureka: false
         fetchRegistry: false
@@ -28,5 +28,7 @@ eureka:
     server:
         waitTimeInMsWhenSyncEmpty: 0 
         enableSelfPreservation: false  # Remove this in Prod        
+        evictionIntervalTimerInMs: 3000
+    server:
+      port: 8761
         
-                       

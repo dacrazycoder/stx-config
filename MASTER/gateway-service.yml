@@ -11,7 +11,7 @@ ribbon:
 
 ---
 spring:
-  profiles: zone1
+  profiles: ATL-EAST
 eureka:
   client:
     serviceUrl:
@@ -23,33 +23,3 @@ eureka:
       zone: zone1
 server:  
   port: ${PORT:8765}
-
----
-spring:
-  profiles: zone2
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:8762/eureka/
-    registerWithEureka: false
-    preferSameZoneEureka: true
-  instance:
-    metadataMap:
-      zone: zone2
-server:  
-  port: ${PORT:8766}
-
----
-spring:
-  profiles: zone3
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:8763/eureka/
-    registerWithEureka: false
-    preferSameZoneEureka: true
-  instance:
-    metadataMap:
-      zone: zone3
-server:  
-  port: ${PORT:8767}
