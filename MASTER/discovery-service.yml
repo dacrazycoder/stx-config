@@ -7,9 +7,6 @@ management:
       enabled: true
     metrics:
       enabled: true
-      cache:
-        time-to-live:
-          seconds: 60
       export:
         jmx:
           enabled: true   
@@ -30,6 +27,6 @@ eureka:
             defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
     server:
         waitTimeInMsWhenSyncEmpty: 0 
-        
+        enableSelfPreservation: false  # Remove this in Prod        
         
                        
