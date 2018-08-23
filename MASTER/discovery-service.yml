@@ -17,7 +17,8 @@ spring:
 eureka:
     instance:
         hostname: localhost
-        leaseRenewalIntervalInSeconds: 5
+        leaseRenewalIntervalInSeconds: 1
+        leaseExpirationDurationInSeconds: 2
         metadataMap:
           zone: ATL-EAST
     client:
