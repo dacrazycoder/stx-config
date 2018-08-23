@@ -14,6 +14,7 @@ server:
   port: 8761
 eureka:
     instance:
+        data-center-info: SITA-ATL-EAST
         hostname: localhost
         leaseRenewalIntervalInSeconds: 1
         leaseExpirationDurationInSeconds: 2
