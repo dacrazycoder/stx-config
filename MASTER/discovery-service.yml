@@ -19,7 +19,6 @@ server:
   port: 8761
 eureka:
     instance:
-        environment: Development
         datacenter: ATLANTA
         data-center-info: SITA-ATL-EAST
         hostname: localhost
