@@ -1,5 +1,15 @@
 server:
     port: 8761
+
+management:
+  endpoint:
+    shutdown:
+      enabled: true
+    metrics:
+      enabled: true
+      cache:
+        time-to-live:
+          seconds: 60
  
 # Defines the Eureka server that is used by the Netflix OSS components to use as the registry
 # for server discovery
