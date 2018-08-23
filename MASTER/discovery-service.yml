@@ -11,16 +11,22 @@ management:
       enabled: true
     metrics:
       enabled: true  
+
+# Spring Security Properties
+security:
+  basic:
+    enabled: true
+  user: sita
+  password: sita123
    
 # Discovery Config For Atlanta Nodes
 spring:
-  profiles: STXOL-ATL-01
+  profiles: STXOL-DISCOVERY-ATL-01
 server:
   port: 8761
 eureka:
     instance:
-        datacenter: ATLANTA
-        data-center-info: SITA-ATL-EAST
+        instanceId: STXOL-DISCOVERY-ATL-01
         hostname: localhost
         leaseRenewalIntervalInSeconds: 1
         leaseExpirationDurationInSeconds: 2
@@ -31,6 +37,7 @@ eureka:
         fetchRegistry: false
         serviceUrl:
             defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+        shouldDisableDelta: true
     server:
         waitTimeInMsWhenSyncEmpty: 0 
         enableSelfPreservation: false  # Remove this in Prod        
