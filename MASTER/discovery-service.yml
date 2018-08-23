@@ -5,15 +5,13 @@ management:
     shutdown:
       enabled: true
     metrics:
-      enabled: true
-      export:
-        jmx:
-          enabled: true   
- 
+      enabled: true  
    
 # Discovery Config For Atlanta Nodes
 spring:
   profiles: STXOL-ATL-01
+server:
+  port: 8761
 eureka:
     instance:
         hostname: localhost
@@ -30,6 +28,4 @@ eureka:
         waitTimeInMsWhenSyncEmpty: 0 
         enableSelfPreservation: false  # Remove this in Prod        
         evictionIntervalTimerInMs: 3000
-    server:
-      port: 8761
         
