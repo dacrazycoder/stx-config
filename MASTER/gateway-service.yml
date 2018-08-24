@@ -11,8 +11,7 @@ ribbon:
   eureka:
     enabled: true
 
-server:  
-  port: ${PORT:8765}
+
 
 # Gateway Config For Atlanta Nodes
 spring:
@@ -20,7 +19,7 @@ spring:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: http://localhost:8761/eureka/, http://localhost:8762/eureka/
     registerWithEureka: true
     preferSameZoneEureka: true
     shouldDisableDelta: true
@@ -28,4 +27,23 @@ eureka:
     instanceId: STXOL-GATEWAY-ATL-01
     metadataMap:
       zone: ATL-EAST
+server:  
+  port: ${PORT:8765}
+  
+---
 
+spring:
+  profiles: STXOL-GATEWAY-ATL-02
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8762/eureka/, http://localhost:8761/eureka/
+    registerWithEureka: true
+    preferSameZoneEureka: true
+    shouldDisableDelta: true
+  instance:
+    instanceId: STXOL-GATEWAY-ATL-02
+    metadataMap:
+      zone: ATL-EAST
+server:  
+  port: ${PORT:8766}      
