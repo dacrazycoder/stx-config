@@ -10,8 +10,10 @@ management:
     shutdown:
       enabled: true
     metrics:
-      enabled: true  
-
+      enabled: true     
+    refresh:
+      enabled: true
+ 
 # Spring Security Properties
 #security:
 #  basic:
