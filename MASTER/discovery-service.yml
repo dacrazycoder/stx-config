@@ -13,11 +13,11 @@ management:
       enabled: true  
 
 # Spring Security Properties
-security:
-  basic:
-    enabled: true
-  user: sita
-  password: sita123
+#security:
+#  basic:
+#    enabled: true
+#  user: sita
+#  password: sita123
    
 # Discovery Config For Atlanta Nodes
 spring:
@@ -42,4 +42,27 @@ eureka:
         waitTimeInMsWhenSyncEmpty: 0 
         enableSelfPreservation: false  # Remove this in Prod        
         evictionIntervalTimerInMs: 3000
-        
+
+---
+spring:
+  profiles: STXOL-DISCOVERY-ATL-02
+server:
+  port: 8762
+eureka:
+    instance:
+        instanceId: STXOL-DISCOVERY-ATL-02
+        hostname: localhost
+        leaseRenewalIntervalInSeconds: 1
+        leaseExpirationDurationInSeconds: 2
+        metadataMap:
+          zone: ATL-EAST
+    client:
+        registerWithEureka: true
+        fetchRegistry: false
+        serviceUrl:
+            defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+        shouldDisableDelta: true
+    server:
+        waitTimeInMsWhenSyncEmpty: 0 
+        enableSelfPreservation: false  # Remove this in Prod        
+        evictionIntervalTimerInMs: 3000        
