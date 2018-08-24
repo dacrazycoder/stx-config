@@ -24,6 +24,9 @@ eureka:
     shouldDisableDelta: true
   instance:
     instanceId: STXOL-GATEWAY-ATL-01
+    statusPageUrlPath: ${management.context-path}/info
+    healthCheckUrlPath: ${management.context-path}/health
+    preferIpAddress: false
     metadataMap:
       zone: ATL-EAST
 server:  

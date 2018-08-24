@@ -28,6 +28,9 @@ eureka:
     instance:
         instanceId: STXOL-DISCOVERY-ATL-01
         hostname: localhost
+        statusPageUrlPath: ${management.context-path}/info
+        healthCheckUrlPath: ${management.context-path}/health
+        preferIpAddress: true
         leaseRenewalIntervalInSeconds: 1
         leaseExpirationDurationInSeconds: 2
         metadataMap:
