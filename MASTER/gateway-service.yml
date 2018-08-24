@@ -1,17 +1,16 @@
 
 # Common Configuration
+ribbon:
+  eureka:
+    enabled: true
+       
+# Gateway Routing    
 zuul:
   prefix: /api
   routes:
     client: 
       path: /client/**
       serviceId: client-service        
-
-ribbon:
-  eureka:
-    enabled: true
-
-
 
 # Gateway Config For Atlanta Nodes
 spring:
