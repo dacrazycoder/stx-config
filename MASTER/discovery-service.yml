@@ -12,7 +12,7 @@ management:
     metrics:
       enabled: true     
     refresh:
-      enabled: true
+      enabled: false
  
 
 # Discovery Config For Atlanta Nodes
@@ -33,7 +33,7 @@ eureka:
     fetchRegistry: false
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/,http://localhost:8762/eureka/
-    shouldDisableDelta: true
+      shouldDisableDelta: true
   server:
     waitTimeInMsWhenSyncEmpty: 0 
     enableSelfPreservation: false  # Remove this in Prod        
@@ -57,8 +57,9 @@ eureka:
     fetchRegistry: false
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/,http://localhost:8762/eureka/
-    shouldDisableDelta: true
+      shouldDisableDelta: true
   server:
     waitTimeInMsWhenSyncEmpty: 0 
     enableSelfPreservation: false  # Remove this in Prod        
     evictionIntervalTimerInMs: 3000        
+    
