@@ -14,13 +14,7 @@ management:
     refresh:
       enabled: true
  
-# Spring Security Properties
-#security:
-#  basic:
-#    enabled: true
-#  user: sita
-#  password: sita123
-   
+
 # Discovery Config For Atlanta Nodes
 spring:
   profiles: STXOL-DISCOVERY-ATL-01
