@@ -12,9 +12,17 @@ zuul:
       path: /client/**
       serviceId: client-service        
 
-# Gateway Config For Atlanta Nodes
+
+--- # STXOL-GATEWAY-ATL-01
 spring:
   profiles: STXOL-GATEWAY-ATL-01
+server:  
+  port: 8765  
+rabbitmq:
+    host: 57.4.3.26
+    port: 5672
+    username: guest
+    password: guest    
 eureka:
   client:
     serviceUrl:
@@ -24,18 +32,21 @@ eureka:
     shouldDisableDelta: true
   instance:
     instanceId: STXOL-GATEWAY-ATL-01
-    statusPageUrlPath: ${management.context-path}/info
-    healthCheckUrlPath: ${management.context-path}/health
     preferIpAddress: false
     metadataMap:
       zone: ATL-EAST
-server:  
-  port: ${PORT:8765}
-  
----
 
+  
+--- # STXOL-GATEWAY-ATL-02
 spring:
   profiles: STXOL-GATEWAY-ATL-02
+server:  
+  port: 8766
+rabbitmq:
+    host: 57.4.3.26
+    port: 5672
+    username: guest
+    password: guest  
 eureka:
   client:
     serviceUrl:
@@ -47,5 +58,4 @@ eureka:
     instanceId: STXOL-GATEWAY-ATL-02
     metadataMap:
       zone: ATL-EAST
-server:  
-  port: ${PORT:8766}      
+     
