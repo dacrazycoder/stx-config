@@ -1,21 +1,9 @@
-# Additional Properties Passed to Actuator      
 info:
-  app: 
+  app:
     name: Sitatex Online - Discovery Service
-    description: This is a discovery service for Sitatex Online 
+    description: This is a discovery service for Sitatex Online
 
-# Actuator Management Properties
-management:
-  endpoint:
-    shutdown:
-      enabled: true
-    metrics:
-      enabled: true     
-    refresh:
-      enabled: false
- 
-
-# Discovery Config For Atlanta Nodes
+--- # STXOL-DISCOVERY-ATL-01
 spring:
   profiles: STXOL-DISCOVERY-ATL-01
 server:
@@ -23,7 +11,7 @@ server:
 eureka:
   instance:
     instanceId: STXOL-DISCOVERY-ATL-01
-    hostname: localhost     
+    hostname: localhost
     leaseRenewalIntervalInSeconds: 1
     leaseExpirationDurationInSeconds: 2
     metadataMap:
@@ -32,14 +20,14 @@ eureka:
     registerWithEureka: false
     fetchRegistry: false
     serviceUrl:
-      defaultZone: http://localhost:8761/eureka/,http://localhost:8762/eureka/
+      defaultZone: http://localhost:8761/eureka/
       shouldDisableDelta: true
   server:
-    waitTimeInMsWhenSyncEmpty: 0 
-    enableSelfPreservation: false  # Remove this in Prod        
+    waitTimeInMsWhenSyncEmpty: 0
+    enableSelfPreservation: false
     evictionIntervalTimerInMs: 3000
-
----
+    
+--- # STXOL-DISCOVERY-ATL-02    
 spring:
   profiles: STXOL-DISCOVERY-ATL-02
 server:
@@ -59,7 +47,6 @@ eureka:
       defaultZone: http://localhost:8761/eureka/,http://localhost:8762/eureka/
       shouldDisableDelta: true
   server:
-    waitTimeInMsWhenSyncEmpty: 0 
-    enableSelfPreservation: false  # Remove this in Prod        
-    evictionIntervalTimerInMs: 3000        
-    
+    waitTimeInMsWhenSyncEmpty: 0
+    enableSelfPreservation: false
+    evictionIntervalTimerInMs: 3000
