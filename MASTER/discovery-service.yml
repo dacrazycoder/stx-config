@@ -1,6 +1,6 @@
 info:
   app:
-    name: Sitatex Online - Discovery Service
+    name: Sitatex Online - Discovery Service ${spring.profiles.active}
     description: This is a discovery service for Sitatex Online
 
 --- # STXOL-DISCOVERY-ATL-01
