@@ -1,9 +1,4 @@
 
-# Common Configuration
-ribbon:
-  eureka:
-    enabled: true
-       
 # Gateway Routing    
 zuul:
   prefix: /api
